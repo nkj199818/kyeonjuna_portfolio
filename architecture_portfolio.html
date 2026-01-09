@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kyeongjuna | Fair and Square</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      overflow: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: white;
+      z-index: 1000;
+      border-bottom: 1px solid #ddd;
+    }
+    header .logo {
+      font-weight: bold;
+    }
+    header .lang-toggle {
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      padding-top: 60px;
+    }
+    .left, .right {
+      width: 50%;
+      height: 100%;
+      overflow-y: scroll;
+      padding: 2rem;
+    }
+    .left {
+      background-color: #fff;
+    }
+    .right {
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .right img {
+      width: 90%;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">KYEONGJUNA</div>
+    <div class="lang-toggle" onclick="toggleLanguage()">EN</div>
+  </header>
+
+  <div class="container">
+    <div class="left" id="text-ko">
+      <h1>Fair and Square</h1>
+      <h2>작은 재판, 큰 공공성</h2>
+      <p>
+        이 프로젝트는 시민 누구나 접근 가능한 소규모 법원에 대한 제안입니다. 
+        서울의 기존 법원 구조가 갖는 위계적이고 폐쇄적인 건축적 특성을 벗어나, 
+        도서관, 동사무소, 경찰서, 우체국 등 기존의 공공시설과 통합된 새로운 법정 유형을 제안합니다.
+      </p>
+      <h2>프로젝트 배경</h2>
+      <p>
+        현재 서울에서는 민사소송이 급증하고 있으며, 그 중 절반 이상은 5분 이내로 끝나는 소액 재판입니다. 
+        이러한 마이크로 재판은 더 접근 가능하고 열린 형태의 공간을 필요로 합니다.
+        이 프로젝트는 그에 대한 건축적 해답을 찾는 실험입니다.
+      </p>
+      <blockquote>
+        “How can architecture foster diversity, equity, and inclusion in our built environment?”
+      </blockquote>
+    </div>
+
+    <div class="left" id="text-en" style="display:none">
+      <h1>Fair and Square</h1>
+      <h2>Small Trials, Big Public Impact</h2>
+      <p>
+        This project proposes small-scale courthouses integrated with public buildings. 
+        Moving away from the traditional courthouse typology in Seoul, the aim is to create more accessible, flexible spaces connected to everyday civic architecture such as libraries, police stations, and town offices.
+      </p>
+      <h2>Agenda</h2>
+      <p>
+        In Seoul, civil lawsuits are increasing, and over half are micro-trials lasting less than five minutes. 
+        These trials deserve spaces that are open, transparent, and public-friendly. This project aims to explore a new architectural typology for such micro-trials.
+      </p>
+      <blockquote>
+        “How can architecture foster diversity, equity, and inclusion in our built environment?”
+      </blockquote>
+    </div>
+
+    <div class="right">
+      <img src="mainrendering-01.png" alt="Fair and Square Rendering">
+    </div>
+  </div>
+
+  <script>
+    function toggleLanguage() {
+      const ko = document.getElementById('text-ko');
+      const en = document.getElementById('text-en');
+      const btn = document.querySelector('.lang-toggle');
+      if (ko.style.display === 'none') {
+        ko.style.display = 'block';
+        en.style.display = 'none';
+        btn.textContent = 'EN';
+      } else {
+        ko.style.display = 'none';
+        en.style.display = 'block';
+        btn.textContent = 'KO';
+      }
+    }
+  </script>
+</body>
+</html>
